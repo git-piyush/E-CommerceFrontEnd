@@ -7,6 +7,8 @@
                     <div>
                         <img src="{{ product.imageUrl }}" class="img-responsive" width="100" height="100" />
                         <h4>{{ product.name }}</h4>
+                        <div class="price">{{ product.unitPrice | currency:'USD' }}</div>
+                        <a href="#" class="primary-btn">Add to cart</a>
                     </div>
 
                 </div>

@@ -29,19 +29,9 @@
                 <div class="row">
                     <div class="col-md-6"></div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-2">
                         <div class="row">
-                            <div class="col-md-9" style="padding-left: 30%">
-
-                                <ngb-pagination [(page)]="thePageNumber"
-                                                [pageSize]="thePageSize"
-                                                [collectionSize]="theTotalElements"
-                                                (pageChange)="listProduct()">
-
-                                </ngb-pagination>
-
-                            </div>
-                            <div class="col-md-3 mt-2" style="text-align: righ;">
+                            <div class="col-md-3 mt-2" style="text-align: left;">
                                 <span class="mr-2">Page Size</span>
 
                                 <select (change)="updatePageSize($event.target.value)">
@@ -52,6 +42,19 @@
                                 </select>
 
                             </div>
+                            <div class="col-md-5" style="padding-left: 30%">
+
+                                <ngb-pagination [(page)]="thePageNumber"
+                                                [pageSize]="thePageSize"
+                                                [collectionSize]="theTotalElements"
+                                                [maxSize]="5"
+                                                [boundaryLinks]="true"
+                                                (pageChange)="listProduct()">
+
+                                </ngb-pagination>
+
+                            </div>
+                            
 
                         </div>
 

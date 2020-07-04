@@ -13,13 +13,14 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
   currentCategoryId: number = 1;
+  previousCategoryId: number = 1;
   searchMode: boolean = false;
 
   //new properties for pagination
   thePageNumber: number = 1;
   thePageSize: number = 10;
   theTotalElements: number = 0;
-  previousCategoryId: number;
+  
 
   constructor(private productService: ProductService,
                private route: ActivatedRoute) { }
@@ -79,7 +80,7 @@ export class ProductListComponent implements OnInit {
   }
   processResult() {
     return data => {
-      this.products = data._embedded.product;
+      this.products = data._embedded.products;
       this.thePageNumber = data.page.number + 1;
       this.thePageSize = data.page.size;
       this.theTotalElements = data.page.totalElements;

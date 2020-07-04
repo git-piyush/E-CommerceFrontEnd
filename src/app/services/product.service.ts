@@ -34,7 +34,7 @@ export class ProductService {
   }
 
   searchProducts(theKeyword: string): Observable<Product[]>{
-    
+
     const searchUrl = `${this.baseUrl}/search/findByNameContaining?name=${theKeyword}`;
 
     return this.httpClient.get<GetReponseProducts>(searchUrl).pipe(
@@ -47,16 +47,13 @@ export class ProductService {
     return this.httpClient.get<GetReponseProductCategory>(this.categoryUrl).pipe(
       map(response => response._embedded.productCategory)
     );
-
   }
-
 }
 interface GetReponseProducts{
   _embedded: {
     products: Product[];
   }
 }
-
 interface GetReponseProductCategory{
   _embedded: {
     productCategory: ProductCategory[];

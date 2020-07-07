@@ -42,4 +42,8 @@ export class CartDetailsComponent implements OnInit {
   decrementQuantity(theCartItem: CartItem){
     this.cartService.decrementQuantity(theCartItem);
   }
+
+  remove(theCartItem: CartItem){
+    this.cartService.remove(theCartItem);
+  }
 }

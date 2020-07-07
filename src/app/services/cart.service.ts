@@ -27,6 +27,7 @@ export class CartService {
         break;
       }
     }
+    
 
     //check if we found it
     alreadyExistsInCart = (exixtingCartItem != undefined);
